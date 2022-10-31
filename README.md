@@ -1,0 +1,1 @@
+This is the Calculator project in The Odin Project Foundations course.
