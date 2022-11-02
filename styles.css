@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+#submit-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+#calculator-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.first-row {
+    flex: 1 1 20%;
+}

@@ -49,3 +49,69 @@ function operate(a, b, c) {
         }
     }
 }
+
+let doubleBtn = document.getElementById("double-btn");
+let zeroBtn = document.getElementById("zero-btn");
+let oneBtn = document.getElementById("one-btn");
+let twoBtn = document.getElementById("two-btn");
+let threeBtn = document.getElementById("three-btn");
+let fourBtn = document.getElementById("four-btn");
+let fiveBtn = document.getElementById("five-btn");
+let sixBtn = document.getElementById("six-btn");
+let sevenBtn = document.getElementById("seven-btn");
+let eightBtn = document.getElementById("eight-btn");
+let nineBtn = document.getElementById("nine-btn");
+let dotBtn = document.getElementById("dot-btn");
+let clearBtn = document.getElementById("clear-btn");
+let moduloBtn = document.getElementById("modulo-btn");
+let deleteBtn = document.getElementById("delete-btn");
+let divideBtn = document.getElementById("divide-btn");
+let multiplyBtn = document.getElementById("multiply-btn");
+let subtractBtn = document.getElementById("subtract-btn");
+let addBtn = document.getElementById("add-btn");
+let equalBtn = document.getElementById("equal-btn");
+
+
+doubleBtn.addEventListener("click", (event) => {
+    console.log("00");
+});
+
+zeroBtn.addEventListener("click", (event) => {
+    console.log("0");
+});
+
+oneBtn.addEventListener("click", (event) => {
+    console.log("1");
+});
+
+twoBtn.addEventListener("click", (event) => {
+    console.log("2");
+});
+
+threeBtn.addEventListener("click", (event) => {
+    console.log("3");
+});
+
+fourBtn.addEventListener("click", (event) => {
+    console.log("4");
+});
+
+fiveBtn.addEventListener("click", (event) => {
+    console.log("5");
+});
+
+sixBtn.addEventListener("click", (event) => {
+    console.log("6");
+});
+
+sevenBtn.addEventListener("click", (event) => {
+    console.log("7");
+});
+
+eightBtn.addEventListener("click", (event) => {
+    console.log("8");
+});
+
+nineBtn.addEventListener("click", (event) => {
+    console.log("9");
+});
