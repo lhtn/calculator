@@ -70,48 +70,53 @@ let multiplyBtn = document.getElementById("multiply-btn");
 let subtractBtn = document.getElementById("subtract-btn");
 let addBtn = document.getElementById("add-btn");
 let equalBtn = document.getElementById("equal-btn");
+let display = document.getElementById("submit-section");
 
+
+dotBtn.addEventListener("click", (event) => {
+    display.textContent = ".";
+});
 
 doubleBtn.addEventListener("click", (event) => {
-    console.log("00");
+    display.textContent = "00";
 });
 
 zeroBtn.addEventListener("click", (event) => {
-    console.log("0");
+    display.textContent = "0";
 });
 
 oneBtn.addEventListener("click", (event) => {
-    console.log("1");
+    display.textContent = "1";
 });
 
 twoBtn.addEventListener("click", (event) => {
-    console.log("2");
+    display.textContent = "2";
 });
 
 threeBtn.addEventListener("click", (event) => {
-    console.log("3");
+    display.textContent = "3";
 });
 
 fourBtn.addEventListener("click", (event) => {
-    console.log("4");
+    display.textContent = "4";
 });
 
 fiveBtn.addEventListener("click", (event) => {
-    console.log("5");
+    display.textContent = "5";
 });
 
 sixBtn.addEventListener("click", (event) => {
-    console.log("6");
+    display.textContent = "6";
 });
 
 sevenBtn.addEventListener("click", (event) => {
-    console.log("7");
+    display.textContent = "7";
 });
 
 eightBtn.addEventListener("click", (event) => {
-    console.log("8");
+    display.textContent = "8";
 });
 
 nineBtn.addEventListener("click", (event) => {
-    console.log("9");
+    display.textContent = "9";
 });
