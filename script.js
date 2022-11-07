@@ -1,122 +1,154 @@
-// function add(a, b) {
-//     console.log(a + b);
-// }
+const doubleBtn = document.getElementById("double-btn");
+const zeroBtn = document.getElementById("zero-btn");
+const oneBtn = document.getElementById("one-btn");
+const twoBtn = document.getElementById("two-btn");
+const threeBtn = document.getElementById("three-btn");
+const fourBtn = document.getElementById("four-btn");
+const fiveBtn = document.getElementById("five-btn");
+const sixBtn = document.getElementById("six-btn");
+const sevenBtn = document.getElementById("seven-btn");
+const eightBtn = document.getElementById("eight-btn");
+const nineBtn = document.getElementById("nine-btn");
+const dotBtn = document.getElementById("dot-btn");
+const clearBtn = document.getElementById("clear-btn");
+const moduloBtn = document.getElementById("modulo-btn");
+const deleteBtn = document.getElementById("delete-btn");
+const divideBtn = document.getElementById("divide-btn");
+const multiplyBtn = document.getElementById("multiply-btn");
+const subtractBtn = document.getElementById("subtract-btn");
+const addBtn = document.getElementById("add-btn");
+const equalBtn = document.getElementById("equal-btn");
+const displayBox = document.getElementById("display");
 
-// function subtract(a, b) {
-//     console.log(a - b);
-// }
+let firstValue;
+let secondValue;
+let operator;
 
-// function multiply(a, b) {
-//     console.log(a * b);
-// }
 
-// function divide(a, b) {
-//     console.log(a / b);
-// }
+// When a button is clicked, the value is displayed in the displayBox
+doubleBtn.addEventListener("click", (event) => {
+    displayBox.value = "00";
+});
 
-// function modulo (a, b) {
-//     console.log(a % b);
-// }
+zeroBtn.addEventListener("click", (event) => {
+    displayBox.value = "0";
+});
 
-// Create a new function operate that takes an operator and 2 numbers and 
-// then calls one of the above functions on the numbers.
-function operate(a, b, c) {
-    switch(c) {
+oneBtn.addEventListener("click", (event) => {
+    displayBox.value = "1";
+});
+
+twoBtn.addEventListener("click", (event) => {
+    displayBox.value = "2";
+});
+
+threeBtn.addEventListener("click", (event) => {
+    displayBox.value = "3";
+});
+
+fourBtn.addEventListener("click", (event) => {
+    displayBox.value = "4";
+});
+
+fiveBtn.addEventListener("click", (event) => {
+    displayBox.value = "5";
+});
+
+sixBtn.addEventListener("click", (event) => {
+    displayBox.value = "6";
+});
+
+sevenBtn.addEventListener("click", (event) => {
+    displayBox.value = "7";
+});
+
+eightBtn.addEventListener("click", (event) => {
+    displayBox.value = "8";
+});
+
+nineBtn.addEventListener("click", (event) => {
+    displayBox.value = "9";
+});
+
+dotBtn.addEventListener("click", (event) => {
+    displayBox.value = ".";
+});
+
+moduloBtn.addEventListener("click", (event) => {
+    displayBox.value = "%";
+});
+
+divideBtn.addEventListener("click", (event) => {
+    displayBox.value = "/";
+});
+
+multiplyBtn.addEventListener("click", (event) => {
+    displayBox.value = "x";
+});
+
+subtractBtn.addEventListener("click", (event) => {
+    displayBox.value = "-";
+});
+
+addBtn.addEventListener("click", (event) => {
+    displayBox.value = "+";
+});
+
+
+// Create functions for basic math operators
+// Create a new function that takes an operator and 2 numbers and calls one of the above functions
+function operate(firstValue, secondValue, operator) {
+    switch(operator) {
         case "+": {
-            let add = a + b;
-            console.log(add);
+            let add = firstValue + secondValue;
+            add();
             break;
         }
         case "-": {
-            let subtract = a - b;
-            console.log(subtract);
+            let subtract = firstValue - secondValue;
+            subtract();
             break;
         }
         case "*": {
-            multiply = a * b;
-            console.log(multiply);
+            let multiply = firstValue * secondValue;
+            multiply();
             break;
         }
         case "/": {
-            let divide = a / b;
-            console.log(divide);
+            let divide = firstValue / secondValue;
+            divide();
             break;
         }
         case "%": {
-            let modulo = a % b;
-            console.log(modulo);
+            let modulo = firstValue % secondValue;
+            modulo();
             break;
         }
     }
 }
 
-let doubleBtn = document.getElementById("double-btn");
-let zeroBtn = document.getElementById("zero-btn");
-let oneBtn = document.getElementById("one-btn");
-let twoBtn = document.getElementById("two-btn");
-let threeBtn = document.getElementById("three-btn");
-let fourBtn = document.getElementById("four-btn");
-let fiveBtn = document.getElementById("five-btn");
-let sixBtn = document.getElementById("six-btn");
-let sevenBtn = document.getElementById("seven-btn");
-let eightBtn = document.getElementById("eight-btn");
-let nineBtn = document.getElementById("nine-btn");
-let dotBtn = document.getElementById("dot-btn");
-let clearBtn = document.getElementById("clear-btn");
-let moduloBtn = document.getElementById("modulo-btn");
-let deleteBtn = document.getElementById("delete-btn");
-let divideBtn = document.getElementById("divide-btn");
-let multiplyBtn = document.getElementById("multiply-btn");
-let subtractBtn = document.getElementById("subtract-btn");
-let addBtn = document.getElementById("add-btn");
-let equalBtn = document.getElementById("equal-btn");
-let display = document.getElementById("submit-section");
 
 
-dotBtn.addEventListener("click", (event) => {
-    display.textContent = ".";
-});
+// Create the functions that populate the display when you click the number buttons. 
+// You should be storing the 'display value' in a variable somewhere for use in the next step.
+function display() {
+    
+}
 
-doubleBtn.addEventListener("click", (event) => {
-    display.textContent = "00";
-});
 
-zeroBtn.addEventListener("click", (event) => {
-    display.textContent = "0";
-});
+// Calculates the answer when you click the Equal button
+function solve() {
 
-oneBtn.addEventListener("click", (event) => {
-    display.textContent = "1";
-});
+}
 
-twoBtn.addEventListener("click", (event) => {
-    display.textContent = "2";
-});
 
-threeBtn.addEventListener("click", (event) => {
-    display.textContent = "3";
-});
+// Clears the display when you click the Clear button
+function clearDisplay() {
 
-fourBtn.addEventListener("click", (event) => {
-    display.textContent = "4";
-});
+}
 
-fiveBtn.addEventListener("click", (event) => {
-    display.textContent = "5";
-});
 
-sixBtn.addEventListener("click", (event) => {
-    display.textContent = "6";
-});
+// Deletes one value when you click the Delete button
+function deleteValue() {
 
-sevenBtn.addEventListener("click", (event) => {
-    display.textContent = "7";
-});
-
-eightBtn.addEventListener("click", (event) => {
-    display.textContent = "8";
-});
-
-nineBtn.addEventListener("click", (event) => {
-    display.textContent = "9";
-});
+}
