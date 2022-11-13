@@ -1,3 +1,36 @@
+const numberButtons = document.querySelectorAll(".number");
+const operationButtons = document.querySelectorAll(".operation");
+const clearButton = document.querySelector(".clear");
+const deleteButton = document.querySelector(".delete");
+const equalsButton = document.querySelector(".equals");
+
+
+numberButtons.forEach((item) => {
+    item.addEventListener("click", (event) => {
+        console.log("Number button clicked");
+    })
+});
+
+operationButtons.forEach((item) => {
+    item.addEventListener("click", (event) => {
+        console.log("Operation button clicked");
+    })
+});
+
+clearButton.addEventListener("click", () => {
+    console.log("Clear button clicked");
+});
+
+deleteButton.addEventListener("click", () => {
+    console.log("Delete button clicked");
+});
+
+equalsButton.addEventListener("click", () => {
+    console.log("Equals button clicked");
+});
+
+
+
 // Create functions for basic math operators
 function add(firstValue, secondValue) {
         return (firstValue + secondValue);
