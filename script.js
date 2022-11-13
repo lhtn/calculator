@@ -3,16 +3,18 @@ const operationButtons = document.querySelectorAll(".operation");
 const clearButton = document.querySelector(".clear");
 const deleteButton = document.querySelector(".delete");
 const equalsButton = document.querySelector(".equals");
+const previousOutput = document.querySelector(".previous-output");
+const currentOutput = document.querySelector(".current-output");
 
 
-numberButtons.forEach((item) => {
-    item.addEventListener("click", (event) => {
+numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
         console.log("Number button clicked");
     })
 });
 
-operationButtons.forEach((item) => {
-    item.addEventListener("click", (event) => {
+operationButtons.forEach((button) => {
+    button.addEventListener("click", () => {
         console.log("Operation button clicked");
     })
 });
@@ -76,27 +78,26 @@ function operate(firstValue, secondValue, operator) {
 }
 
 
-
-// Create the functions that populate the display when you click the number buttons. 
-// You should be storing the 'display value' in a variable somewhere for use in the next step.
-function display() {
-
-}
-
-
-// Calculates the answer when you click the Equal button
-function solve() {
-
-}
-
-
 // Clears the display when you click the Clear button
-function clearDisplay() {
+function clear() {
 
 }
 
 
 // Deletes one value when you click the Delete button
 function deleteValue() {
+
+}
+
+
+// Create the functions that populate the display when you click the number buttons. 
+// You should be storing the 'display value' in a variable somewhere for use in the next step.
+function updateDisplay() {
+
+}
+
+
+// Calculates the answer when you click the Equal button
+function compute() {
 
 }
