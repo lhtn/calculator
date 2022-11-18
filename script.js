@@ -13,20 +13,13 @@ const currentOutputScreen = document.querySelector(".current-output");
 
 numberButtons.forEach(button => {
     button.addEventListener("click", (event) => {
-        handleNumber(event.target.textContent);
+        appendNumber(event.target.textContent);
     })
 });
 
-
-function handleNumber(number) {
-    currentNum += number;
-    currentOutputScreen.textContent = currentNum;
-}
-
-
-operationButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        console.log("Operation button clicked");
+operationButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+        appendOperator(event.target.textContent);
     })
 });
 
@@ -39,39 +32,37 @@ deleteButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-    compute();
-    updateScreen();
+
 });
 
 
+// Add number to screen
+function appendNumber(num) {
+    currentNum += num;
+    currentOutputScreen.textContent = currentNum;
+}
+
+// Add operator to screen
+function appendOperator(operator) {
+    previousNum = currentNum;
+    currentNum = "";
+    previousOutputScreen.textContent = previousNum + operator;
+    currentOutputScreen.textContent = "";
+}
 
 // Clears the display when you click the Clear button
 function clearScreen() {
-    
+    currentNum = "";
+    previousNum = "";
+    operator = "";
+    currentOutputScreen.textContent = "";
+    previousOutputScreen.textContent = "";
 }
-
 
 // Deletes one value when you click the Delete button
 function deleteValue() {
-
-}
-
-
-// Append numbers on output screen
-function appendNumber(number) {
-
-}
-
-
-// Show operation on output screen
-function chooseOperation(operation) {
-
-}
-
-
-// Create the functions that populate the display when you click the number buttons. 
-function updateScreen() {
-
+    currentNum = currentNum.slice(0, -1);
+    currentOutputScreen.textContent = currentOutputScreen.textContent.slice(0, -1);
 }
 
 
@@ -102,18 +93,13 @@ function compute(firstValue, secondValue, operator) {
     switch(operator) {
         case "+": 
             return add(firstValue, secondValue);
-            break;
         case "-": 
             return subtract(firstValue, secondValue);
-            break;
         case "*": 
             return multiply(firstValue, secondValue);
-            break;
         case "/": 
             return divide(firstValue, secondValue);
-            break;
         case "%": 
             return modulo(firstValue, secondValue);
-            break;
     }
 }
