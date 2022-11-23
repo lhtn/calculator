@@ -1,7 +1,8 @@
 let currentNum = "";
 let previousNum = "";
 let operator = "";
-let clearOnNextNum = false;
+// let clearOnNextNum = false;
+let result;
 
 const numberButtons = document.querySelectorAll(".number");
 const operationButtons = document.querySelectorAll(".operation");
@@ -30,15 +31,14 @@ function divide(firstValue, secondValue) {
 }
 
 function modulo (firstValue, secondValue) {
-    return firstValue % secondValue;
+    return firstValue - (Math.floor(firstValue / secondValue) * secondValue);
 }
 
 
 // Calculates the answer when you click the Equals button
 function compute(previousNum, currentNum, operator) {
-    const firstValue = parseFloat(previousNum);
-    const secondValue = parseFloat(currentNum);
-    let result = 0;
+    const firstValue = Number(previousNum);
+    const secondValue = Number(currentNum);
     try {
         switch(operator) {
             case "+":
@@ -61,9 +61,14 @@ function compute(previousNum, currentNum, operator) {
     catch(e) {
         currentOutputScreen.textContent = ("There's an error: ", e);
     };
+    updateScreen();
+}
+
+
+function updateScreen() {
     currentNum = result;
     currentOutputScreen.textContent = result;
-    clearOnNextNum = true;
+    // clearOnNextNum = true;
 }
 
 
@@ -86,7 +91,6 @@ equalsButton.addEventListener("click", () => {
     if (currentNum != "" && previousNum != "") {
         compute(previousNum, currentNum, operator);
     }
-    previousNum = "";
 });
 
 
@@ -98,24 +102,33 @@ deleteButton.addEventListener("click", deleteValue);
 
 // Add number to screen
 function appendNumber(num) {
-    if (clearOnNextNum) {
-        clearOnNextNum = false;
-        clearScreen();
+    // if (clearOnNextNum) {
+    //     clearOnNextNum = false;
+    //     clearScreen();
+    // }
+    if (currentNum.length <= 18) {
+        currentNum += num;
+        currentOutputScreen.textContent = currentNum;
     }
-    currentNum += num;
-    currentOutputScreen.textContent = currentNum;
 }
 
 
 // Add operator to screen
 function appendOperator(op) {
-    clearOnNextNum = false;
+    // clearOnNextNum = false;
     if (currentNum != "") {
-        operator = op;
-        previousNum = currentNum;
-        currentNum = "";
-        previousOutputScreen.textContent = previousNum + " " + operator;
-        currentOutputScreen.textContent = "";
+        if (previousNum === "") {
+            operator = op;
+            previousNum = currentNum;
+            currentNum = "";
+            previousOutputScreen.textContent = previousNum + " " + operator;
+            currentOutputScreen.textContent = "";
+        } else if (previousNum != "") {
+            operator = op;
+            previousNum = previousNum + operator + currentNum;
+            currentNum = "";
+            previousOutputScreen.textContent = previousNum + " " + operator + " " + currentNum;
+        }
     }
 }
 

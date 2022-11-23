@@ -34,7 +34,7 @@ button:hover {
     justify-content: space-around;
     flex-direction: column;
     align-items: flex-end; 
-    word-break: break-all; /* can break all words, will move to next line */
+    /* word-break: break-all; can break all words, will move to next line */
 }
 
 .output-section .previous-output {
