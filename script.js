@@ -11,11 +11,17 @@ let previousNum = "";
 let currentNum = "";
 let operator = "";
 let result = "";
+let hasDecimalPoint = false;
 
 
 // Add number to screen
 numberButtons.forEach(number => {
     number.addEventListener("click", (e) => {
+        if (e.target.textContent === "." && !hasDecimalPoint) {
+            hasDecimalPoint = true;
+        } else if (e.target.textContent === "." && hasDecimalPoint) {
+            return;
+        }
         if (currentNum.length <= 18) {
             currentNum += e.target.textContent;
             currentOutputScreen.textContent = currentNum;
@@ -27,6 +33,7 @@ numberButtons.forEach(number => {
 // Add operator to screen
 operationButtons.forEach(operation => {
     operation.addEventListener("click", (e) => {
+        hasDecimalPoint = false;
         if (previousNum === "" && currentNum === "") return;
         if (previousNum && currentNum && operator) {
             compute();
@@ -93,8 +100,12 @@ function compute() {
             case "X": 
                 result = result * currentNum;
                 break;
-            case "/": 
-                result = result / currentNum;
+            case "/":
+                if (currentNum === 0) {
+                    result = "Cannot divide by 0";
+                } else {
+                    result = result / currentNum;
+                }
                 break;
             case "%": 
                 result = result - (Math.floor(result / currentNum) * currentNum);
